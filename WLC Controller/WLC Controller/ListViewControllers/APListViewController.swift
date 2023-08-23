@@ -1,5 +1,5 @@
 //
-//  ClientListViewController.swift
+//  APListViewController.swift
 //  WLC Controller
 //
 //  Created by Joel Pita on 16/8/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ClientListViewController: UIViewController {
+class APListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +16,7 @@ class ClientListViewController: UIViewController {
     }
     
     @IBAction func didTapButton() {
-        let vc = storyboard?.instantiateViewController(identifier: "clienthome_vc") as! ClientHomeViewController
+        let vc = storyboard?.instantiateViewController(identifier: "aphome_vc") as! APViewController
         present(vc, animated: true)
     }
 

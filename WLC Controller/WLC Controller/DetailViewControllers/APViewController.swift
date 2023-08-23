@@ -1,5 +1,5 @@
 //
-//  WLANHomeViewController.swift
+//  APHomeViewController.swift
 //  WLC Controller
 //
 //  Created by Joel Pita on 16/8/2023.
@@ -7,15 +7,16 @@
 
 import UIKit
 
-class WLANHomeViewController: UIViewController {
+class APViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
     @IBAction func didTapButton() {
-        let vc = storyboard?.instantiateViewController(identifier: "aplist_vc") as! APListViewController
+        let vc = storyboard?.instantiateViewController(identifier: "clientlist_vc") as! ClientListViewController
         present(vc, animated: true)
     }
 

@@ -140,6 +140,7 @@
                             <outlet property="delegate" destination="bpE-R3-6lO" id="Cey-SD-lNs"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="CT5-lU-9YZ"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GYE-77-ar3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="1812" y="-115"/>
         </scene>
-        <!--Home View Controller-->
+        <!--View Controller-->
         <scene sceneID="Gds-3J-MN1">
             <objects>
-                <viewController storyboardIdentifier="wlanhome_vc" id="jgx-4l-Mhz" customClass="WLANHomeViewController" customModule="WLC_Controller" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wlanhome_vc" id="jgx-4l-Mhz" customClass="WLANViewController" customModule="WLC_Controller" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jtM-gc-cH8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -248,10 +249,10 @@
             </objects>
             <point key="canvasLocation" x="1812" y="592"/>
         </scene>
-        <!--Home View Controller-->
+        <!--View Controller-->
         <scene sceneID="KNS-K0-Kt1">
             <objects>
-                <viewController storyboardIdentifier="aphome_vc" id="8h9-oL-cGz" customClass="APHomeViewController" customModule="WLC_Controller" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="aphome_vc" id="8h9-oL-cGz" customClass="APViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jL6-NQ-hVg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -282,10 +283,10 @@
             </objects>
             <point key="canvasLocation" x="3264" y="-115"/>
         </scene>
-        <!--Client Home View Controller-->
+        <!--Client View Controller-->
         <scene sceneID="XL4-ZO-Vj1">
             <objects>
-                <viewController storyboardIdentifier="clienthome_vc" id="WrY-kf-o3c" customClass="ClientHomeViewController" customModule="WLC_Controller" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="clienthome_vc" id="WrY-kf-o3c" customClass="ClientViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ABe-by-EXu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

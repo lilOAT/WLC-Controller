@@ -1,5 +1,5 @@
 //
-//  ClientHomeViewController.swift
+//  ClientListViewController.swift
 //  WLC Controller
 //
 //  Created by Joel Pita on 16/8/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ClientHomeViewController: UIViewController {
+class ClientListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +15,10 @@ class ClientHomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func didTapButton() {
+        let vc = storyboard?.instantiateViewController(identifier: "clienthome_vc") as! ClientViewController
+        present(vc, animated: true)
+    }
 
     /*
     // MARK: - Navigation
