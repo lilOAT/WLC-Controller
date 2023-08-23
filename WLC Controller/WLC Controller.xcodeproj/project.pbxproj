@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		793A5D8D2A95FD4A008AFD25 /* WLANViewController+Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A5D8C2A95FD4A008AFD25 /* WLANViewController+Row.swift */; };
 		793A5D8F2A9617CB008AFD25 /* WLANListViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A5D8E2A9617CB008AFD25 /* WLANListViewController+DataSource.swift */; };
+		793A5D912A964177008AFD25 /* AP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A5D902A964177008AFD25 /* AP.swift */; };
+		793A5D932A9643A9008AFD25 /* APViewController+Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A5D922A9643A9008AFD25 /* APViewController+Row.swift */; };
+		793A5D952A9644C5008AFD25 /* APListViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A5D942A9644C4008AFD25 /* APListViewController+DataSource.swift */; };
+		793A5D972A9649ED008AFD25 /* ClientListViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A5D962A9649ED008AFD25 /* ClientListViewController+DataSource.swift */; };
+		793A5D992A964A12008AFD25 /* CLIENT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A5D982A964A12008AFD25 /* CLIENT.swift */; };
+		793A5D9B2A964CFA008AFD25 /* ClientViewController+Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A5D9A2A964CFA008AFD25 /* ClientViewController+Row.swift */; };
 		7973E5E12A8C9A7C00233D18 /* WLANListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973E5E02A8C9A7C00233D18 /* WLANListViewController.swift */; };
 		7973E5E32A8CABDF00233D18 /* APListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973E5E22A8CABDF00233D18 /* APListViewController.swift */; };
 		7973E5E52A8CABF600233D18 /* APViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973E5E42A8CABF600233D18 /* APViewController.swift */; };
@@ -28,6 +34,12 @@
 /* Begin PBXFileReference section */
 		793A5D8C2A95FD4A008AFD25 /* WLANViewController+Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WLANViewController+Row.swift"; sourceTree = "<group>"; };
 		793A5D8E2A9617CB008AFD25 /* WLANListViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WLANListViewController+DataSource.swift"; sourceTree = "<group>"; };
+		793A5D902A964177008AFD25 /* AP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AP.swift; sourceTree = "<group>"; };
+		793A5D922A9643A9008AFD25 /* APViewController+Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APViewController+Row.swift"; sourceTree = "<group>"; };
+		793A5D942A9644C4008AFD25 /* APListViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APListViewController+DataSource.swift"; sourceTree = "<group>"; };
+		793A5D962A9649ED008AFD25 /* ClientListViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClientListViewController+DataSource.swift"; sourceTree = "<group>"; };
+		793A5D982A964A12008AFD25 /* CLIENT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLIENT.swift; sourceTree = "<group>"; };
+		793A5D9A2A964CFA008AFD25 /* ClientViewController+Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClientViewController+Row.swift"; sourceTree = "<group>"; };
 		7973E5E02A8C9A7C00233D18 /* WLANListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLANListViewController.swift; sourceTree = "<group>"; };
 		7973E5E22A8CABDF00233D18 /* APListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APListViewController.swift; sourceTree = "<group>"; };
 		7973E5E42A8CABF600233D18 /* APViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +75,9 @@
 				7973E5E02A8C9A7C00233D18 /* WLANListViewController.swift */,
 				793A5D8E2A9617CB008AFD25 /* WLANListViewController+DataSource.swift */,
 				7973E5E22A8CABDF00233D18 /* APListViewController.swift */,
+				793A5D942A9644C4008AFD25 /* APListViewController+DataSource.swift */,
 				7973E5EA2A8CAC1E00233D18 /* ClientListViewController.swift */,
+				793A5D962A9649ED008AFD25 /* ClientListViewController+DataSource.swift */,
 			);
 			path = ListViewControllers;
 			sourceTree = "<group>";
@@ -74,7 +88,9 @@
 				7973E5E62A8CAC0300233D18 /* WLANViewController.swift */,
 				793A5D8C2A95FD4A008AFD25 /* WLANViewController+Row.swift */,
 				7973E5E42A8CABF600233D18 /* APViewController.swift */,
+				793A5D922A9643A9008AFD25 /* APViewController+Row.swift */,
 				7973E5E82A8CAC1000233D18 /* ClientViewController.swift */,
+				793A5D9A2A964CFA008AFD25 /* ClientViewController+Row.swift */,
 			);
 			path = DetailViewControllers;
 			sourceTree = "<group>";
@@ -83,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				7973E5EF2A8D04A700233D18 /* WLAN.swift */,
+				793A5D902A964177008AFD25 /* AP.swift */,
+				793A5D982A964A12008AFD25 /* CLIENT.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,17 +210,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				793A5D992A964A12008AFD25 /* CLIENT.swift in Sources */,
 				793A5D8F2A9617CB008AFD25 /* WLANListViewController+DataSource.swift in Sources */,
 				7973E5E92A8CAC1000233D18 /* ClientViewController.swift in Sources */,
+				793A5D952A9644C5008AFD25 /* APListViewController+DataSource.swift in Sources */,
+				793A5D9B2A964CFA008AFD25 /* ClientViewController+Row.swift in Sources */,
 				7973E5ED2A8CE24000233D18 /* MenuViewController.swift in Sources */,
 				7973E5E12A8C9A7C00233D18 /* WLANListViewController.swift in Sources */,
+				793A5D912A964177008AFD25 /* AP.swift in Sources */,
 				7973E5F02A8D04A700233D18 /* WLAN.swift in Sources */,
+				793A5D932A9643A9008AFD25 /* APViewController+Row.swift in Sources */,
 				7984DB1D2A242F43004D2EA4 /* LoginViewController.swift in Sources */,
 				7984DB192A242F43004D2EA4 /* AppDelegate.swift in Sources */,
 				7984DB1B2A242F43004D2EA4 /* SceneDelegate.swift in Sources */,
 				7973E5E52A8CABF600233D18 /* APViewController.swift in Sources */,
 				7973E5EB2A8CAC1E00233D18 /* ClientListViewController.swift in Sources */,
 				7973E5E72A8CAC0300233D18 /* WLANViewController.swift in Sources */,
+				793A5D972A9649ED008AFD25 /* ClientListViewController+DataSource.swift in Sources */,
 				7973E5E32A8CABDF00233D18 /* APListViewController.swift in Sources */,
 				793A5D8D2A95FD4A008AFD25 /* WLANViewController+Row.swift in Sources */,
 			);

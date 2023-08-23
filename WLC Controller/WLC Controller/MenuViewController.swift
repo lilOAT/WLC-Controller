@@ -11,12 +11,22 @@ class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .lightGray
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func didTapButton() {
+    @IBAction func didTapButton_wlanList() {
         let vc = storyboard?.instantiateViewController(identifier: "wlanlist_vc") as! UICollectionViewController
+        present(vc, animated: true)
+    }
+    
+    @IBAction func didTapButton_apList() {
+        let vc = storyboard?.instantiateViewController(identifier: "aplist_vc") as! UICollectionViewController
+        present(vc, animated: true)
+    }
+    
+    @IBAction func didTapButton_clientList() {
+        let vc = storyboard?.instantiateViewController(identifier: "clientlist_vc") as! UICollectionViewController
         present(vc, animated: true)
     }
 }

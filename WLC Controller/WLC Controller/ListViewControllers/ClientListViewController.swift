@@ -7,27 +7,50 @@
 
 import UIKit
 
-class ClientListViewController: UIViewController {
-
+class ClientListViewController: UICollectionViewController {
+    var dataSource: DataSource!
+    var clients: [CLIENT] = CLIENT.sampleData
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let listLayout = listLayout()
+        collectionView.collectionViewLayout = listLayout
+        
+        let cellRegistration = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
+        
+        dataSource = DataSource(collectionView: collectionView) {
+            (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: String) in
+            return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
+        }
+        
+        // Grab snapshot of data
+        updateSnapshot()
+        
+        collectionView.dataSource = dataSource
+        
     }
     
-    @IBAction func didTapButton() {
-        let vc = storyboard?.instantiateViewController(identifier: "clienthome_vc") as! ClientViewController
-        present(vc, animated: true)
+    override func collectionView(
+        _ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath
+    ) -> Bool {
+        let id = clients[indexPath.item].id
+        pushDetailViewForClient(withId: id)
+        return false
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func pushDetailViewForClient(withId id: CLIENT.ID) {
+        let client = getClient(withId: id)
+        let viewController = ClientViewController(client: client)
+        //navigationController?.pushViewController(viewController, animated: true)
+        present(viewController, animated: true)
     }
-    */
-
+    
+    private func listLayout() -> UICollectionViewCompositionalLayout {
+        var listConfiguration = UICollectionLayoutListConfiguration(appearance: .grouped)
+        listConfiguration.showsSeparators = true
+        listConfiguration.backgroundColor = .systemGray
+        return UICollectionViewCompositionalLayout.list(using: listConfiguration)
+    }
 }
+

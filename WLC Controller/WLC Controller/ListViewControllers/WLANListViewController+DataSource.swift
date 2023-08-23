@@ -30,10 +30,4 @@ extension WLANListViewController {
         let index = wlans.indexOfWLAN(withId: id)
         return wlans[index]
     }
-    
-    //Updates corresponding wlan. NOT SURE IF NEEDED <<<<<<-------- DELETE
-    func updateWlan(_ wlan: WLAN) {
-        let index = wlans.indexOfWLAN(withId: wlan.id)
-        wlans[index] = wlan
-    }
 }
