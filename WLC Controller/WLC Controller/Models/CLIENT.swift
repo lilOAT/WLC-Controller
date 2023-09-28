@@ -4,6 +4,7 @@
 //
 //  Created by Joel Pita on 23/8/2023.
 //
+//  CLient Object Class
 
 import Foundation
 

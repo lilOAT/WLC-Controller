@@ -25,7 +25,6 @@ extension ClientListViewController {
         cell.contentConfiguration = contentConfiguration
     }
     
-    //Returns corresponding wlan from APs array
     func getClient(withId id: CLIENT.ID) -> CLIENT {
         let index = clients.indexOfCLIENT(withId: id)
         return clients[index]

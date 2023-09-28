@@ -4,6 +4,7 @@
 //
 //  Created by Joel Pita on 23/8/2023.
 //
+//  Access Point Object Class
 
 import Foundation
 

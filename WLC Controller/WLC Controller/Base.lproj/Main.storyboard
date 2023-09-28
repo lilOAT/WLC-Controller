@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -99,9 +99,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhD-Dj-sEJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhD-Dj-sEJ">
                                 <rect key="frame" x="157" y="186" width="104" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="WLAN List">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
@@ -110,33 +109,52 @@
                                     <action selector="didTapButton_wlanList" destination="W4l-k2-DyQ" eventType="touchUpInside" id="f6S-tz-MzS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFO-zh-OTs">
-                                <rect key="frame" x="169" y="345" width="77" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="AP List"/>
-                                <connections>
-                                    <action selector="didTapButton_apList" destination="W4l-k2-DyQ" eventType="touchUpInside" id="jPb-Jh-KEy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogJ-lf-BII">
-                                <rect key="frame" x="157" y="493" width="100" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogJ-lf-BII">
+                                <rect key="frame" x="130" y="489" width="158" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Client List"/>
                                 <connections>
                                     <action selector="didTapButton_clientList" destination="W4l-k2-DyQ" eventType="touchUpInside" id="6Ic-aH-eZs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1c-Ju-IgA">
+                                <rect key="frame" x="155" y="637" width="109" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Terminal"/>
+                                <connections>
+                                    <segue destination="vY5-iE-cmD" kind="presentation" id="uit-Zl-XiZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFO-zh-OTs">
+                                <rect key="frame" x="148" y="344" width="119" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="AP List"/>
+                                <connections>
+                                    <action selector="didTapButton_apList" destination="W4l-k2-DyQ" eventType="touchUpInside" id="jPb-Jh-KEy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JD9-u2-ccE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GhD-Dj-sEJ" firstAttribute="centerX" secondItem="ogJ-lf-BII" secondAttribute="centerX" id="1AP-iD-aXm"/>
+                            <constraint firstItem="JD9-u2-ccE" firstAttribute="bottom" secondItem="K1c-Ju-IgA" secondAttribute="bottom" constant="190" id="7i4-hl-58U"/>
+                            <constraint firstItem="GhD-Dj-sEJ" firstAttribute="leading" secondItem="JD9-u2-ccE" secondAttribute="leading" constant="157" id="Fdi-qf-6Ov"/>
+                            <constraint firstItem="iFO-zh-OTs" firstAttribute="centerX" secondItem="XP6-r2-m4p" secondAttribute="centerX" id="Gb5-A3-cSi"/>
+                            <constraint firstAttribute="bottom" secondItem="ogJ-lf-BII" secondAttribute="bottom" constant="372" id="Jmx-8X-ufJ"/>
+                            <constraint firstItem="ogJ-lf-BII" firstAttribute="centerX" secondItem="K1c-Ju-IgA" secondAttribute="centerX" id="SmW-v1-oqZ"/>
+                            <constraint firstItem="ogJ-lf-BII" firstAttribute="leading" secondItem="JD9-u2-ccE" secondAttribute="leading" constant="130" id="WZ3-TL-kdY"/>
+                            <constraint firstItem="K1c-Ju-IgA" firstAttribute="leading" secondItem="JD9-u2-ccE" secondAttribute="leading" constant="155" id="fbl-LN-PmS"/>
+                            <constraint firstItem="iFO-zh-OTs" firstAttribute="leading" secondItem="JD9-u2-ccE" secondAttribute="leading" constant="148" id="oJY-Tm-nLm"/>
+                            <constraint firstItem="GhD-Dj-sEJ" firstAttribute="top" secondItem="JD9-u2-ccE" secondAttribute="top" constant="94" id="rle-33-HoC"/>
+                            <constraint firstItem="iFO-zh-OTs" firstAttribute="top" secondItem="XP6-r2-m4p" secondAttribute="top" constant="344" id="uZX-5F-deL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="i5d-lT-AkW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9w-LR-euH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367" y="-115"/>
+            <point key="canvasLocation" x="366.66666666666669" y="-115.17857142857142"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="ztr-KX-f18">
@@ -164,48 +182,6 @@
             </objects>
             <point key="canvasLocation" x="1812" y="-873"/>
         </scene>
-        <!--List View Controller-->
-        <scene sceneID="owH-GS-igx">
-            <objects>
-                <viewController storyboardIdentifier="aplist_vc" id="Kd9-5D-byq" customClass="APListViewController" customModule="WLC_Controller" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="eI4-aN-bRG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ak5-hN-Gwj">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells/>
-                    </collectionView>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bqi-gO-2wd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1812" y="-115"/>
-        </scene>
-        <!--Client List View Controller-->
-        <scene sceneID="YCj-dj-2ho">
-            <objects>
-                <viewController storyboardIdentifier="clientlist_vc" id="Khk-fI-k6y" customClass="ClientListViewController" customModule="WLC_Controller" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9Ua-4I-iNn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fwa-1s-6VC">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells/>
-                    </collectionView>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JjV-4W-d7M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1812" y="592"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yos-ZG-i4h">
             <objects>
@@ -224,9 +200,53 @@
             </objects>
             <point key="canvasLocation" x="-543" y="-115"/>
         </scene>
+        <!--Terminal View Controller-->
+        <scene sceneID="dIh-2O-PZf">
+            <objects>
+                <viewController id="vY5-iE-cmD" customClass="TerminalViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qWX-nF-P7M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ng-RV-dfV">
+                                <rect key="frame" x="20" y="752" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textLabel:" destination="vY5-iE-cmD" eventType="primaryActionTriggered" id="0B3-oT-Z3i"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2O-dp-hMd">
+                                <rect key="frame" x="0.0" y="59" width="393" height="604"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lFy-hL-atZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lFy-hL-atZ" firstAttribute="bottom" secondItem="1ng-RV-dfV" secondAttribute="bottom" constant="100" id="QGm-MJ-qcw"/>
+                            <constraint firstItem="lFy-hL-atZ" firstAttribute="trailing" secondItem="1ng-RV-dfV" secondAttribute="trailing" constant="20" id="VSP-It-75k"/>
+                            <constraint firstItem="1ng-RV-dfV" firstAttribute="leading" secondItem="lFy-hL-atZ" secondAttribute="leading" constant="20" id="iAm-Fr-2Pz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="o2O-dp-hMd" id="V4P-y2-S5p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cKR-Yq-tbT" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1646" y="-115"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background" width="2480" height="3508"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
