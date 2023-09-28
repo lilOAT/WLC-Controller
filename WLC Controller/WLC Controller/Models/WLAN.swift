@@ -1,3 +1,11 @@
+//
+//  WLAN.swift
+//  WLC Controller
+//
+//  Created by Joel Pita on 23/8/2023.
+//
+//  WLAN Object Class
+
 import Foundation
 
 
