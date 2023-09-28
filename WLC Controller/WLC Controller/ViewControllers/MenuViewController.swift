@@ -29,4 +29,9 @@ class MenuViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(identifier: "clientlist_vc") as! UICollectionViewController
         present(vc, animated: true)
     }
+    
+    @IBAction func didTapButton_terminal() {
+        let vc = storyboard?.instantiateViewController(identifier: "terminal_vc")
+        present(vc!, animated: true)
+    }
 }

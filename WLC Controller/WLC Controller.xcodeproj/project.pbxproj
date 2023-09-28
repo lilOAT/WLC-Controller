@@ -124,19 +124,27 @@
 		7984DB172A242F43004D2EA4 /* WLC Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7973E5EE2A8D029600233D18 /* Models */,
+				79C1E76B2AC5CFE80091F4A4 /* ViewControllers */,
 				7984DB182A242F43004D2EA4 /* AppDelegate.swift */,
 				7984DB1A2A242F43004D2EA4 /* SceneDelegate.swift */,
-				7973E5EE2A8D029600233D18 /* Models */,
-				7984DB1C2A242F43004D2EA4 /* LoginViewController.swift */,
-				7973E5EC2A8CE24000233D18 /* MenuViewController.swift */,
-				793A5D8A2A95FCA4008AFD25 /* ListViewControllers */,
-				793A5D8B2A95FCC5008AFD25 /* DetailViewControllers */,
 				7984DB1E2A242F43004D2EA4 /* Main.storyboard */,
 				7984DB212A242F44004D2EA4 /* Assets.xcassets */,
 				7984DB232A242F44004D2EA4 /* LaunchScreen.storyboard */,
 				7984DB262A242F44004D2EA4 /* Info.plist */,
 			);
 			path = "WLC Controller";
+			sourceTree = "<group>";
+		};
+		79C1E76B2AC5CFE80091F4A4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7984DB1C2A242F43004D2EA4 /* LoginViewController.swift */,
+				7973E5EC2A8CE24000233D18 /* MenuViewController.swift */,
+				793A5D8A2A95FCA4008AFD25 /* ListViewControllers */,
+				793A5D8B2A95FCC5008AFD25 /* DetailViewControllers */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

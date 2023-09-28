@@ -53,10 +53,10 @@ class WLANListViewController: UICollectionViewController {
             return UICollectionViewCompositionalLayout.list(using: listConfiguration)
         }
     
-    @IBAction func didTapButton() {
-        let vc = storyboard?.instantiateViewController(identifier: "wlanhome_vc") as! WLANViewController
-        present(vc, animated: true)
-        
-    }
+//    @IBAction func didTapButton() {
+//        let vc = storyboard?.instantiateViewController(identifier: "wlanhome_vc") as! WLANViewController
+//        present(vc, animated: true)
+//        
+//    }
 
 }
