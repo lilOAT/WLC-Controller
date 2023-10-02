@@ -29,6 +29,11 @@
 		7984DB202A242F43004D2EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7984DB1E2A242F43004D2EA4 /* Main.storyboard */; };
 		7984DB222A242F44004D2EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7984DB212A242F44004D2EA4 /* Assets.xcassets */; };
 		7984DB252A242F44004D2EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7984DB232A242F44004D2EA4 /* LaunchScreen.storyboard */; };
+		79C1E76E2ACAA2780091F4A4 /* TelnetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C1E76D2ACAA2780091F4A4 /* TelnetPresenter.swift */; };
+		79C1E7702ACAA3620091F4A4 /* TelnetGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C1E76F2ACAA3620091F4A4 /* TelnetGateway.swift */; };
+		79C1E7752ACAAB7E0091F4A4 /* TelnetClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C1E7742ACAAB7E0091F4A4 /* TelnetClient.m */; };
+		79C1E7772ACAABB80091F4A4 /* HostsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C1E7762ACAABB80091F4A4 /* HostsDataSource.m */; };
+		79C1E7BA2ACADD0E0091F4A4 /* libtelnet.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C1E7B92ACADD0E0091F4A4 /* libtelnet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +61,15 @@
 		7984DB212A242F44004D2EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7984DB242A242F44004D2EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7984DB262A242F44004D2EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79C1E76D2ACAA2780091F4A4 /* TelnetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelnetPresenter.swift; sourceTree = "<group>"; };
+		79C1E76F2ACAA3620091F4A4 /* TelnetGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelnetGateway.swift; sourceTree = "<group>"; };
+		79C1E7732ACAAB4F0091F4A4 /* TelnetClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TelnetClient.h; sourceTree = "<group>"; };
+		79C1E7742ACAAB7E0091F4A4 /* TelnetClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TelnetClient.m; sourceTree = "<group>"; };
+		79C1E7762ACAABB80091F4A4 /* HostsDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HostsDataSource.m; sourceTree = "<group>"; };
+		79C1E7782ACAABD60091F4A4 /* HostsDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostsDataSource.h; sourceTree = "<group>"; };
+		79C1E7792ACAAC090091F4A4 /* libtelnet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libtelnet.h; sourceTree = "<group>"; };
+		79C1E77B2ACAB2930091F4A4 /* TelnetClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TelnetClient-Bridging-Header.h"; sourceTree = "<group>"; };
+		79C1E7B92ACADD0E0091F4A4 /* libtelnet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libtelnet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +142,7 @@
 				79C1E76B2AC5CFE80091F4A4 /* ViewControllers */,
 				7984DB182A242F43004D2EA4 /* AppDelegate.swift */,
 				7984DB1A2A242F43004D2EA4 /* SceneDelegate.swift */,
+				79C1E76C2ACAA2660091F4A4 /* Telnet */,
 				7984DB1E2A242F43004D2EA4 /* Main.storyboard */,
 				7984DB212A242F44004D2EA4 /* Assets.xcassets */,
 				7984DB232A242F44004D2EA4 /* LaunchScreen.storyboard */,
@@ -145,6 +160,22 @@
 				793A5D8B2A95FCC5008AFD25 /* DetailViewControllers */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		79C1E76C2ACAA2660091F4A4 /* Telnet */ = {
+			isa = PBXGroup;
+			children = (
+				79C1E76D2ACAA2780091F4A4 /* TelnetPresenter.swift */,
+				79C1E76F2ACAA3620091F4A4 /* TelnetGateway.swift */,
+				79C1E7732ACAAB4F0091F4A4 /* TelnetClient.h */,
+				79C1E7742ACAAB7E0091F4A4 /* TelnetClient.m */,
+				79C1E7762ACAABB80091F4A4 /* HostsDataSource.m */,
+				79C1E7782ACAABD60091F4A4 /* HostsDataSource.h */,
+				79C1E7792ACAAC090091F4A4 /* libtelnet.h */,
+				79C1E7B92ACADD0E0091F4A4 /* libtelnet.m */,
+				79C1E77B2ACAB2930091F4A4 /* TelnetClient-Bridging-Header.h */,
+			);
+			path = Telnet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +210,7 @@
 				TargetAttributes = {
 					7984DB142A242F43004D2EA4 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -218,11 +250,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79C1E7772ACAABB80091F4A4 /* HostsDataSource.m in Sources */,
 				793A5D992A964A12008AFD25 /* CLIENT.swift in Sources */,
 				793A5D8F2A9617CB008AFD25 /* WLANListViewController+DataSource.swift in Sources */,
 				7973E5E92A8CAC1000233D18 /* ClientViewController.swift in Sources */,
 				793A5D952A9644C5008AFD25 /* APListViewController+DataSource.swift in Sources */,
+				79C1E7752ACAAB7E0091F4A4 /* TelnetClient.m in Sources */,
 				793A5D9B2A964CFA008AFD25 /* ClientViewController+Row.swift in Sources */,
+				79C1E7BA2ACADD0E0091F4A4 /* libtelnet.m in Sources */,
 				7973E5ED2A8CE24000233D18 /* MenuViewController.swift in Sources */,
 				7973E5E12A8C9A7C00233D18 /* WLANListViewController.swift in Sources */,
 				793A5D912A964177008AFD25 /* AP.swift in Sources */,
@@ -230,10 +265,12 @@
 				793A5D932A9643A9008AFD25 /* APViewController+Row.swift in Sources */,
 				7984DB1D2A242F43004D2EA4 /* LoginViewController.swift in Sources */,
 				7984DB192A242F43004D2EA4 /* AppDelegate.swift in Sources */,
+				79C1E7702ACAA3620091F4A4 /* TelnetGateway.swift in Sources */,
 				7984DB1B2A242F43004D2EA4 /* SceneDelegate.swift in Sources */,
 				7973E5E52A8CABF600233D18 /* APViewController.swift in Sources */,
 				7973E5EB2A8CAC1E00233D18 /* ClientListViewController.swift in Sources */,
 				7973E5E72A8CAC0300233D18 /* WLANViewController.swift in Sources */,
+				79C1E76E2ACAA2780091F4A4 /* TelnetPresenter.swift in Sources */,
 				793A5D972A9649ED008AFD25 /* ClientListViewController+DataSource.swift in Sources */,
 				7973E5E32A8CABDF00233D18 /* APListViewController.swift in Sources */,
 				793A5D8D2A95FD4A008AFD25 /* WLANViewController+Row.swift in Sources */,
@@ -381,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6YWPLZ942Z;
@@ -396,9 +434,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MERGED_BINARY_TYPE = automatic;
 				PRODUCT_BUNDLE_IDENTIFIER = "jpita.WLC-Controller";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WLC Controller/Telnet/TelnetClient-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -409,6 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6YWPLZ942Z;
@@ -424,9 +466,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MERGED_BINARY_TYPE = automatic;
 				PRODUCT_BUNDLE_IDENTIFIER = "jpita.WLC-Controller";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WLC Controller/Telnet/TelnetClient-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
