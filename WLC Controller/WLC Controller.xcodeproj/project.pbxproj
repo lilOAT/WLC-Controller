@@ -34,6 +34,7 @@
 		79C1E7752ACAAB7E0091F4A4 /* TelnetClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C1E7742ACAAB7E0091F4A4 /* TelnetClient.m */; };
 		79C1E7772ACAABB80091F4A4 /* HostsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C1E7762ACAABB80091F4A4 /* HostsDataSource.m */; };
 		79C1E7BA2ACADD0E0091F4A4 /* libtelnet.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C1E7B92ACADD0E0091F4A4 /* libtelnet.m */; };
+		79C1E7BC2ACAE5550091F4A4 /* TerminalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C1E7BB2ACAE5550091F4A4 /* TerminalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		79C1E7792ACAAC090091F4A4 /* libtelnet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libtelnet.h; sourceTree = "<group>"; };
 		79C1E77B2ACAB2930091F4A4 /* TelnetClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TelnetClient-Bridging-Header.h"; sourceTree = "<group>"; };
 		79C1E7B92ACADD0E0091F4A4 /* libtelnet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libtelnet.m; sourceTree = "<group>"; };
+		79C1E7BB2ACAE5550091F4A4 /* TerminalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				7984DB1C2A242F43004D2EA4 /* LoginViewController.swift */,
+				79C1E7BB2ACAE5550091F4A4 /* TerminalViewController.swift */,
 				7973E5EC2A8CE24000233D18 /* MenuViewController.swift */,
 				793A5D8A2A95FCA4008AFD25 /* ListViewControllers */,
 				793A5D8B2A95FCC5008AFD25 /* DetailViewControllers */,
@@ -270,6 +273,7 @@
 				7973E5E52A8CABF600233D18 /* APViewController.swift in Sources */,
 				7973E5EB2A8CAC1E00233D18 /* ClientListViewController.swift in Sources */,
 				7973E5E72A8CAC0300233D18 /* WLANViewController.swift in Sources */,
+				79C1E7BC2ACAE5550091F4A4 /* TerminalViewController.swift in Sources */,
 				79C1E76E2ACAA2780091F4A4 /* TelnetPresenter.swift in Sources */,
 				793A5D972A9649ED008AFD25 /* ClientListViewController+DataSource.swift in Sources */,
 				7973E5E32A8CABDF00233D18 /* APListViewController.swift in Sources */,

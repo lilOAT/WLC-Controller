@@ -218,6 +218,7 @@ static void _event_handler(telnet_t *telnet, telnet_event_t *ev,
                 len = [(NSInputStream *)aStream read:buf maxLength:512*1024];
                 if(len > 0) {
                     telnet_recv(telnet, buf, len);
+                    NSLog(@"I have replied");
                 } else {
                     NSLog(@"no buffer! server disconnected");
                     [self.outputStream close];
