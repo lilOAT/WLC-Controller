@@ -30,8 +30,8 @@ class MenuViewController: UIViewController {
         present(vc, animated: true)
     }
     
-//    @IBAction func didTapButton_terminal() {
-//        let vc = storyboard?.instantiateViewController(identifier: "terminal_vc") as! UICollectionViewController
-//        present(vc, animated: true)
-//    }
+    @IBAction func didTapButton_terminal() {
+        guard let vc = storyboard?.instantiateViewController(identifier: "terminal_vc") else { return } //as! UIViewController
+        present(vc, animated: true)
+    }
 }

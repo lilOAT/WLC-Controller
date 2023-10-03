@@ -122,7 +122,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Terminal"/>
                                 <connections>
-                                    <segue destination="vY5-iE-cmD" kind="presentation" id="uit-Zl-XiZ"/>
+                                    <action selector="didTapButton_terminal" destination="W4l-k2-DyQ" eventType="touchUpInside" id="vDb-a2-4ta"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFO-zh-OTs">
@@ -180,7 +180,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GYE-77-ar3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="-873"/>
+            <point key="canvasLocation" x="1645" y="-873"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yos-ZG-i4h">
@@ -203,43 +203,47 @@
         <!--Terminal View Controller-->
         <scene sceneID="dIh-2O-PZf">
             <objects>
-                <viewController id="vY5-iE-cmD" customClass="TerminalViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="terminal_vc" id="vY5-iE-cmD" customClass="TerminalViewController" customModule="WLC_Controller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qWX-nF-P7M">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ng-RV-dfV">
-                                <rect key="frame" x="20" y="752" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="textLabel:" destination="vY5-iE-cmD" eventType="primaryActionTriggered" id="0B3-oT-Z3i"/>
-                                </connections>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2O-dp-hMd">
-                                <rect key="frame" x="0.0" y="59" width="393" height="604"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2O-dp-hMd">
+                                <rect key="frame" x="0.0" y="59" width="393" height="137"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ng-RV-dfV">
+                                <rect key="frame" x="20" y="238" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="button:" destination="vY5-iE-cmD" eventType="primaryActionTriggered" id="Haf-hP-61d"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lFy-hL-atZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="lFy-hL-atZ" firstAttribute="bottom" secondItem="1ng-RV-dfV" secondAttribute="bottom" constant="100" id="QGm-MJ-qcw"/>
-                            <constraint firstItem="lFy-hL-atZ" firstAttribute="trailing" secondItem="1ng-RV-dfV" secondAttribute="trailing" constant="20" id="VSP-It-75k"/>
-                            <constraint firstItem="1ng-RV-dfV" firstAttribute="leading" secondItem="lFy-hL-atZ" secondAttribute="leading" constant="20" id="iAm-Fr-2Pz"/>
+                            <constraint firstItem="1ng-RV-dfV" firstAttribute="top" secondItem="o2O-dp-hMd" secondAttribute="bottom" constant="42" id="1r3-Bb-58I"/>
+                            <constraint firstItem="o2O-dp-hMd" firstAttribute="leading" secondItem="lFy-hL-atZ" secondAttribute="leading" id="Buv-IY-r6l"/>
+                            <constraint firstItem="1ng-RV-dfV" firstAttribute="leading" secondItem="qWX-nF-P7M" secondAttribute="leadingMargin" id="CZD-GR-qwH"/>
+                            <constraint firstItem="1ng-RV-dfV" firstAttribute="trailing" secondItem="qWX-nF-P7M" secondAttribute="trailingMargin" id="Lc0-GH-IUd"/>
+                            <constraint firstItem="lFy-hL-atZ" firstAttribute="bottom" secondItem="1ng-RV-dfV" secondAttribute="bottom" constant="590" id="Utr-Nq-fWV"/>
+                            <constraint firstItem="o2O-dp-hMd" firstAttribute="top" secondItem="lFy-hL-atZ" secondAttribute="top" constant="11" id="cRO-dl-KnG"/>
+                            <constraint firstItem="lFy-hL-atZ" firstAttribute="trailing" secondItem="o2O-dp-hMd" secondAttribute="trailing" constant="21" id="xTc-p8-H8t"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="label" destination="o2O-dp-hMd" id="V4P-y2-S5p"/>
+                        <outlet property="label" destination="o2O-dp-hMd" id="FLi-wE-WQh"/>
+                        <outlet property="textLabel" destination="1ng-RV-dfV" id="sFm-hn-2No"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKR-Yq-tbT" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1646" y="-115"/>
+            <point key="canvasLocation" x="1644.9275362318842" y="-115.17857142857142"/>
         </scene>
     </scenes>
     <resources>

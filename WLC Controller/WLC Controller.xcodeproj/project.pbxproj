@@ -29,8 +29,8 @@
 		7984DB202A242F43004D2EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7984DB1E2A242F43004D2EA4 /* Main.storyboard */; };
 		7984DB222A242F44004D2EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7984DB212A242F44004D2EA4 /* Assets.xcassets */; };
 		7984DB252A242F44004D2EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7984DB232A242F44004D2EA4 /* LaunchScreen.storyboard */; };
+		798791562ACC574000628082 /* TerminalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798791552ACC574000628082 /* TerminalViewController.swift */; };
 		79C1E7682AC44F520091F4A4 /* TelnetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C1E7672AC44F520091F4A4 /* TelnetClient.swift */; };
-		79C1E76A2AC44FA70091F4A4 /* TemerinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C1E7692AC44FA70091F4A4 /* TemerinalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,8 +58,8 @@
 		7984DB212A242F44004D2EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7984DB242A242F44004D2EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7984DB262A242F44004D2EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		798791552ACC574000628082 /* TerminalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalViewController.swift; sourceTree = "<group>"; };
 		79C1E7672AC44F520091F4A4 /* TelnetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelnetClient.swift; sourceTree = "<group>"; };
-		79C1E7692AC44FA70091F4A4 /* TemerinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemerinalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +134,7 @@
 				7973E5EE2A8D029600233D18 /* Models */,
 				7984DB1C2A242F43004D2EA4 /* LoginViewController.swift */,
 				7973E5EC2A8CE24000233D18 /* MenuViewController.swift */,
-				79C1E7692AC44FA70091F4A4 /* TemerinalViewController.swift */,
+				798791552ACC574000628082 /* TerminalViewController.swift */,
 				793A5D8A2A95FCA4008AFD25 /* ListViewControllers */,
 				793A5D8B2A95FCC5008AFD25 /* DetailViewControllers */,
 				7984DB1E2A242F43004D2EA4 /* Main.storyboard */,
@@ -221,8 +221,8 @@
 				7973E5E92A8CAC1000233D18 /* ClientViewController.swift in Sources */,
 				793A5D952A9644C5008AFD25 /* APListViewController+DataSource.swift in Sources */,
 				793A5D9B2A964CFA008AFD25 /* ClientViewController+Row.swift in Sources */,
+				798791562ACC574000628082 /* TerminalViewController.swift in Sources */,
 				7973E5ED2A8CE24000233D18 /* MenuViewController.swift in Sources */,
-				79C1E76A2AC44FA70091F4A4 /* TemerinalViewController.swift in Sources */,
 				7973E5E12A8C9A7C00233D18 /* WLANListViewController.swift in Sources */,
 				793A5D912A964177008AFD25 /* AP.swift in Sources */,
 				7973E5F02A8D04A700233D18 /* WLAN.swift in Sources */,

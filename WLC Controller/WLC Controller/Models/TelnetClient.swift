@@ -8,7 +8,7 @@
 import Foundation
 import Network
 
-extension ViewController {
+extension TerminalViewController {
     
     
     func connect(host: String, port: Int) {
