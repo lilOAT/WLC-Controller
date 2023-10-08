@@ -30,6 +30,7 @@
 		7984DB222A242F44004D2EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7984DB212A242F44004D2EA4 /* Assets.xcassets */; };
 		7984DB252A242F44004D2EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7984DB232A242F44004D2EA4 /* LaunchScreen.storyboard */; };
 		798791562ACC574000628082 /* TerminalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798791552ACC574000628082 /* TerminalViewController.swift */; };
+		79A9CD172AD26112005F52A8 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9CD162AD26112005F52A8 /* Resources.swift */; };
 		79C1E7682AC44F520091F4A4 /* TelnetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C1E7672AC44F520091F4A4 /* TelnetClient.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		7984DB242A242F44004D2EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7984DB262A242F44004D2EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		798791552ACC574000628082 /* TerminalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalViewController.swift; sourceTree = "<group>"; };
+		79A9CD162AD26112005F52A8 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		79C1E7672AC44F520091F4A4 /* TelnetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelnetClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 				7973E5EF2A8D04A700233D18 /* WLAN.swift */,
 				793A5D902A964177008AFD25 /* AP.swift */,
 				793A5D982A964A12008AFD25 /* CLIENT.swift */,
+				79A9CD162AD26112005F52A8 /* Resources.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				7973E5EB2A8CAC1E00233D18 /* ClientListViewController.swift in Sources */,
 				7973E5E72A8CAC0300233D18 /* WLANViewController.swift in Sources */,
 				793A5D972A9649ED008AFD25 /* ClientListViewController+DataSource.swift in Sources */,
+				79A9CD172AD26112005F52A8 /* Resources.swift in Sources */,
 				7973E5E32A8CABDF00233D18 /* APListViewController.swift in Sources */,
 				793A5D8D2A95FD4A008AFD25 /* WLANViewController+Row.swift in Sources */,
 			);

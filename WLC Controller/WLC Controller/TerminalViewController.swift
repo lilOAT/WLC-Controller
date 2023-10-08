@@ -11,11 +11,15 @@ import Network
 
 class TerminalViewController: UIViewController {
     public var connection: NWConnection?
+//    public var hostIP: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view
-        connect(host: "192.168.50.1", port: 23)
+        print("From Terminal: host = " + Resources.hostIP)
+        connect(host: Resources.hostIP, port: 23)
+        sendCommand(command: Resources.user + "\n")
+        sendCommand(command: Resources.pass + "\n")
         receiveData()
     }
     

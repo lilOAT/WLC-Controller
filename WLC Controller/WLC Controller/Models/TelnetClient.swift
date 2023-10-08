@@ -10,7 +10,6 @@ import Network
 
 extension TerminalViewController {
     
-    
     func connect(host: String, port: Int) {
         let endpoint = NWEndpoint.hostPort(host: NWEndpoint.Host(host), port: NWEndpoint.Port(rawValue: UInt16(port))!)
         connection = NWConnection(to: endpoint, using: .tcp)

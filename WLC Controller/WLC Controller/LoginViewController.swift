@@ -13,8 +13,16 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
+    @IBOutlet var ipAddress: UITextField!
+    @IBOutlet var username: UITextField!
+    @IBOutlet var password: UITextField!
     @IBAction func didTapButton() {
+        Resources.hostIP = ipAddress.text
+        Resources.user = username.text
+        Resources.pass = password.text
+//        let vc2 = TerminalViewController()
+//        vc2.hostIP = ipAddress.text
         let vc = storyboard?.instantiateViewController(identifier: "nc") as! UINavigationController
         present(vc, animated: true)
     }
