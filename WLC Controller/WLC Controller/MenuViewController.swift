@@ -27,11 +27,23 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func didTapButton_clientList() {
+        parseClientList()
+        let vc = storyboard?.instantiateViewController(identifier: "clientlist_vc") as! UICollectionViewController
+        present(vc, animated: true)
+    }
+    
+    @IBAction func didTapButton_terminal() {
+        guard let vc = storyboard?.instantiateViewController(identifier: "terminal_vc") else { return } //as! UIViewController
+        present(vc, animated: true)
+    }
+    
+    func parseClientList() {
         print(Resources.clientsString)
         if(!Resources.clients.isEmpty){
             Resources.clients = []
         }
         //Parse clientsString into CLIENT objects
+        // INSERT URL
         let scanner = Scanner.init(string: Resources.clientsString)
         while scanner.currentIndex != Resources.clientsString.endIndex {
           guard
@@ -40,27 +52,15 @@ class MenuViewController: UIViewController {
             let ip = scanner.scanUpToString(")"),
             let _ = scanner.scanString(") at "),
             let mac = scanner.scanUpToString("on "),
-//            let _ = scanner.scanUpToString("on "),
             let _ = scanner.scanString("on "),
-            let interface = scanner.scanUpToString("?")
+            let interface = scanner.scanUpToString("\r\n")
             else {
               print("error in parsing client list")
               break
           }
 
-            if scanner.currentIndex != Resources.clientsString.endIndex {
-                //Remove tail of last CLIENTs interface
-            }
             print("IP: " + ip + " MAC: " + mac + " Interface: " + interface)
             Resources.clients.append(CLIENT(ip: ip, mac: mac, interface: interface))
         }
-
-        let vc = storyboard?.instantiateViewController(identifier: "clientlist_vc") as! UICollectionViewController
-        present(vc, animated: true)
-    }
-    
-    @IBAction func didTapButton_terminal() {
-        guard let vc = storyboard?.instantiateViewController(identifier: "terminal_vc") else { return } //as! UIViewController
-        present(vc, animated: true)
     }
 }
