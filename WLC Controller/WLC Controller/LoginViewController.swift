@@ -18,14 +18,21 @@ class LoginViewController: UIViewController {
     @IBOutlet var username: UITextField!
     @IBOutlet var password: UITextField!
     @IBAction func didTapButton() {
-        Resources.hostIP = ipAddress.text
-        Resources.user = username.text
-        Resources.pass = password.text
-//        let vc2 = TerminalViewController()
-//        vc2.hostIP = ipAddress.text
-        let vc = storyboard?.instantiateViewController(identifier: "nc") as! UINavigationController
-        present(vc, animated: true)
+        if(ipAddress.text != "" && username.text != "" && password.text != "") {
+            Resources.hostIP = ipAddress.text
+            Resources.user = username.text
+            Resources.pass = password.text
+            Resources.telnetClient = TelnetClient()
+            let telnetClient = Resources.telnetClient
+            telnetClient?.connect(host: Resources.hostIP, port: 23)
+            telnetClient?.login()
+            sleep(1)
+            telnetClient?.sendCommand(command: Resources.user + "\n")
+            telnetClient?.sendCommand(command: Resources.pass + "\n")
+            telnetClient?.sendCommand(command: "arp -a\n")
+            let vc = storyboard?.instantiateViewController(identifier: "nc") as! UINavigationController
+            present(vc, animated: true)
+        }
     }
-
 }
 

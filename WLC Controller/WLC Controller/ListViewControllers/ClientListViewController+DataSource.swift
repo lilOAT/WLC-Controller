@@ -21,7 +21,7 @@ extension ClientListViewController {
     func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: CLIENT.ID) {
         let client = getClient(withId: id)
         var contentConfiguration = cell.defaultContentConfiguration()
-        contentConfiguration.text = client.mac
+        contentConfiguration.text = client.ip
         cell.contentConfiguration = contentConfiguration
     }
     

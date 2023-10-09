@@ -9,7 +9,8 @@ import UIKit
 
 class ClientListViewController: UICollectionViewController {
     var dataSource: DataSource!
-    var clients: [CLIENT] = CLIENT.sampleData
+//    var clients: [CLIENT] = CLIENT.sampleData
+    var clients: [CLIENT] = Resources.clients
     
     override func viewDidLoad() {
         super.viewDidLoad()

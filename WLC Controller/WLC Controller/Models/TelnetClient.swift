@@ -7,14 +7,15 @@
 
 import Foundation
 import Network
+import UIKit
 
-extension TerminalViewController {
+class TelnetClient {
     
     func connect(host: String, port: Int) {
         let endpoint = NWEndpoint.hostPort(host: NWEndpoint.Host(host), port: NWEndpoint.Port(rawValue: UInt16(port))!)
-        connection = NWConnection(to: endpoint, using: .tcp)
+        Resources.connection = NWConnection(to: endpoint, using: .tcp)
         
-        connection?.stateUpdateHandler = { state in
+        Resources.connection?.stateUpdateHandler = { state in
             switch state {
             case .ready:
                 print("Connected to \(host):\(port)")
@@ -25,11 +26,11 @@ extension TerminalViewController {
             }
         }
         
-        connection?.start(queue: .main)
+        Resources.connection?.start(queue: .main)
     }
     
     func sendCommand(command: String) {
-        guard let connection = connection else {
+        guard let connection = Resources.connection else {
             print("Not connected")
             return
         }
@@ -44,21 +45,21 @@ extension TerminalViewController {
         })
     }
     
-    func receiveData() {
-        guard let connection = connection else {
+    //Standard telnet data receival
+    func login() {
+        guard let connection = Resources.connection else {
             print("Not connected")
             return
         }
         
+        var receivedString: String!
+        
+        //Maximum TCP packet length = 65535
         connection.receive(minimumIncompleteLength: 1, maximumLength: 65536) { (data, context, isComplete, error) in
             if let data = data, !data.isEmpty {
-                if let receivedString = String(data: data, encoding: .utf8) {
-                    self.label.text! += receivedString
-                    
-                    //Scroll the textview down to always show last line
-                    //--https://developer.apple.com/forums/thread/126549
-                    let range = NSMakeRange(self.label.text.count - 1, 0)
-                    self.label.scrollRangeToVisible(range)
+                receivedString = String(data: data, encoding: .utf8)
+                if receivedString != nil {
+                    Resources.clientsString += receivedString
                 }
             }
             
@@ -68,14 +69,50 @@ extension TerminalViewController {
                 print("Connection closed by remote host")
                 self.disconnect()
             } else {
-                self.receiveData()
+                self.login()
+            }
+        }
+    }
+    
+    func receiveData(vc: TerminalViewController) {
+        guard let connection = Resources.connection else {
+            print("Not connected")
+            return
+        }
+        
+        var receivedString: String!
+        
+        //Maximum TCP packet length = 65535
+        connection.receive(minimumIncompleteLength: 1, maximumLength: 65536) { (data, context, isComplete, error) in
+            if let data = data, !data.isEmpty {
+                receivedString = String(data: data, encoding: .utf8)
+                if receivedString != nil {
+                    print("receivedString: " + receivedString + " ?end")
+                    // Append reply to textview
+                    vc.label.text! += receivedString
+                    
+                    //Scroll the textview down to always show last line
+                    //--https://developer.apple.com/forums/thread/126549
+                    let range = NSMakeRange(vc.label.text.count - 1, 0)
+                    vc.label.scrollRangeToVisible(range)
+                }
+                receivedString = ""
+            }
+            
+            if let error = error {
+                print("Failed to receive data: \(error.localizedDescription)")
+            } else if isComplete {
+                print("Connection closed by remote host")
+                self.disconnect()
+            } else {
+                self.receiveData(vc: vc)
             }
         }
     }
     
     func disconnect() {
-        connection?.cancel()
-        connection = nil
+        Resources.connection?.cancel()
+        Resources.connection = nil
         print("Disconnected")
     }
 }

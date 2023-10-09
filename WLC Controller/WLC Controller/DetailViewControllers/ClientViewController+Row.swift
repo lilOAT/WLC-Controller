@@ -9,9 +9,9 @@ import UIKit
 
 extension ClientViewController {
     enum Row: Hashable {
+            case ip
             case mac
-            case apName
-            case wlan
+            case interface
         
         var textStyle: UIFont.TextStyle {
             return .body

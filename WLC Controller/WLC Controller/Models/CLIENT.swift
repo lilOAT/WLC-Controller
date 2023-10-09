@@ -11,9 +11,9 @@ import Foundation
 
 struct CLIENT: Identifiable {
     var id: String = UUID().uuidString
+    var ip: String
     var mac: String
-    var apName: String
-    var wlan: String
+    var interface: String
 }
 extension [CLIENT] {
     func indexOfCLIENT(withId id: CLIENT.ID) -> Self.Index {
@@ -28,21 +28,21 @@ extension [CLIENT] {
 extension CLIENT {
     static var sampleData = [
         CLIENT(
-            mac: "12-12-12-12-12",
-            apName: "AP01",
-            wlan: "test1"),
+            ip: "192.168.1.2",
+            mac: "12-12-12-12-12-12",
+            interface: "test1"),
         CLIENT(
+            ip: "192.168.1.3",
             mac: "34-34-34-34-34-34",
-            apName: "AP02",
-            wlan: "test2"),
+            interface: "test2"),
         CLIENT(
+            ip: "192.168.1.4",
             mac: "56-56-56-56-56-56",
-            apName: "AP03",
-            wlan: "test3"),
+            interface: "test3"),
         CLIENT(
+            ip: "192.168.1.5",
             mac: "78-78-78-78-78-78",
-            apName: "AP04",
-            wlan: "test4"),
+            interface: "test4"),
     ]
 }
 #endif

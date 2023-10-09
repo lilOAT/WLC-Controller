@@ -45,16 +45,16 @@ class ClientViewController: UICollectionViewController {
     
     func text(for row: Row) -> String? {
         switch row {
+        case .ip: return "IP Address: " + client.ip
         case .mac: return "MAC Address: " + client.mac
-        case .apName: return "AP Name: " + client.apName
-        case .wlan: return "WLAN: " + client.wlan
+        case .interface: return "Interface: " + client.interface
         }
     }
     
     private func updateSnapshot() {
         var snapshot = Snapshot()
         snapshot.appendSections([0])
-        snapshot.appendItems([Row.mac, Row.apName, Row.wlan], toSection: 0)
+        snapshot.appendItems([Row.ip, Row.mac, Row.interface], toSection: 0)
         dataSource.apply(snapshot)
     }
 }
