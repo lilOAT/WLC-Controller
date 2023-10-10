@@ -9,6 +9,11 @@ import UIKit
 import Foundation
 
 class MenuViewController: UIViewController {
+    public var clientsGathered: Bool = false {
+        didSet {
+            launchClientList()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +32,9 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func didTapButton_clientList() {
-        parseClientList()
-        let vc = storyboard?.instantiateViewController(identifier: "clientlist_vc") as! UICollectionViewController
-        present(vc, animated: true)
+        Resources.telnetClient.receiveClientList(vc: self)
+        Resources.telnetClient.sendCommand(command: "arp -a\n")
+        //receiveClient() will trigger didSet clientsGathered, which triggers launchClientList()
     }
     
     @IBAction func didTapButton_terminal() {
@@ -37,8 +42,10 @@ class MenuViewController: UIViewController {
         present(vc, animated: true)
     }
     
+    //====================================
+    //MARK: parseClientList
     func parseClientList() {
-        print(Resources.clientsString)
+        print("clientsString:\n" + Resources.clientsString)
         if(!Resources.clients.isEmpty){
             Resources.clients = []
         }
@@ -58,9 +65,15 @@ class MenuViewController: UIViewController {
               print("error in parsing client list")
               break
           }
-
-            print("IP: " + ip + " MAC: " + mac + " Interface: " + interface)
             Resources.clients.append(CLIENT(ip: ip, mac: mac, interface: interface))
         }
+    }
+    
+    //====================================
+    //MARK: launchClientList
+    func launchClientList() {
+        parseClientList()
+        let vc = storyboard?.instantiateViewController(identifier: "clientlist_vc") as! UICollectionViewController
+        present(vc, animated: true)
     }
 }

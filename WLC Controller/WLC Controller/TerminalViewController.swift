@@ -11,19 +11,16 @@ import Network
 
 class TerminalViewController: UIViewController {
     public var connection: NWConnection?
-//    public var hostIP: String!
+    public var terminalReady = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view
-//        print("From Terminal: host = " + Resources.hostIP)
-//        Resources.telnetClient = TelnetClient()
-//        Resources.telnetClient.connect(host: Resources.hostIP, port: 23)
-//        Resources.telnetClient.login()
-//        Resources.telnetClient.sendCommand(command: Resources.user + "\n")
-//        Resources.telnetClient.sendCommand(command: Resources.pass + "\n")
-//        Resources.telnetClient.sendCommand(command: "arp -a\n")
-        Resources.telnetClient.receiveData(vc: self)
+        if !terminalReady {
+            Resources.telnetClient.receiveData(vc: self)
+        }
+        Resources.telnetClient.sendCommand(command: "\n")
+        terminalReady = true
     }
     
     @IBOutlet var label: UITextView!

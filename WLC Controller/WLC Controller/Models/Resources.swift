@@ -14,6 +14,8 @@ struct Resources {
     static var user: String!
     static var pass: String!
     static var connection: NWConnection!
+    static var isConnected = false
+    static var loginString = ""
     static var clientsString = ""
     static var clients: [CLIENT] = []
 }
