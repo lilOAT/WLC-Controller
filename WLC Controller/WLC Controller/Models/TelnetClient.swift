@@ -21,8 +21,8 @@ class TelnetClient {
             case .ready:
                 print("Connected to \(host):\(port)")
                 Resources.telnetClient.login(vc: vc)
-                Resources.telnetClient.sendCommand(command: Resources.user + "\n")
-                Resources.telnetClient.sendCommand(command: Resources.pass + "\n")
+//                Resources.telnetClient.sendCommand(command: Resources.user + "\n")
+//                Resources.telnetClient.sendCommand(command: Resources.pass + "\n")
             case .failed(let error):
                 print("Connection failed with error: \(error.localizedDescription)")
                 vc.displayAlert(title: "Error", message: "Failed to connect to: " + Resources.hostIP)
@@ -63,6 +63,19 @@ class TelnetClient {
                 receivedString = String(data: data1, encoding: .utf8)
                 if receivedString != nil {
                     Resources.loginString += receivedString
+                    print("receivedString: " + receivedString)
+                    if receivedString.contains("RT-AX58U") {
+                        Resources.telnetClient.sendCommand(command: Resources.user + "\n")
+                    }
+                    if receivedString.contains("Password:") {
+                        Resources.telnetClient.sendCommand(command: Resources.pass + "\n")
+                        print("pass: " + Resources.pass)
+                    }
+                    if receivedString.contains("Login incorrect") {
+                        vc.displayAlert(title: "Invalid login", message: "Username or password incorrect")
+                        self.disconnect()
+                        return
+                    }
                 }
             }
             if let error = error {
@@ -73,6 +86,7 @@ class TelnetClient {
             } else {
                 //Only iterate if login is incomplete
                 if !Resources.loginString.contains("@") { //@ = login success
+                    Resources.loginString = ""
                     self.login(vc: vc)
                 } else {
                     vc.connected = true //This triggers didSet connected to trigger launch()
@@ -104,7 +118,11 @@ class TelnetClient {
                 print("Connection closed by remote host")
                 self.disconnect()
             } else {
+                print("clientsString: " + Resources.clientsString)
                 //Only iterate if login is incomplete
+                if Resources.clientsString.contains("@") && !Resources.clientsString.contains("?") {
+                    Resources.clientsString = ""
+                }
                 if !Resources.clientsString.contains("@") {
                     self.receiveClientList(vc: vc)
                 } else {
@@ -143,7 +161,7 @@ class TelnetClient {
                 print("Connection closed by remote host")
                 self.disconnect()
             } else {
-                self.receiveData(vc: vc)
+                    self.receiveData(vc: vc)
             }
         }
     }

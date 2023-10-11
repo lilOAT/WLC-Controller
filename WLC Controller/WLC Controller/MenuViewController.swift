@@ -73,6 +73,7 @@ class MenuViewController: UIViewController {
     //MARK: launchClientList
     func launchClientList() {
         parseClientList()
+        Resources.clientsString = ""
         let vc = storyboard?.instantiateViewController(identifier: "clientlist_vc") as! UICollectionViewController
         present(vc, animated: true)
     }

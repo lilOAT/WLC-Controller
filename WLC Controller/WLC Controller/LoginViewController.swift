@@ -89,7 +89,7 @@ class LoginViewController: UIViewController {
     //====================================
     //MARK: launch
     func launch() {
-        print("loginString:\n" + Resources.loginString)
+//        print("loginString:\n" + Resources.loginString)
         if isAuthorized() {
             let vc = storyboard?.instantiateViewController(identifier: "nc") as! UINavigationController
             present(vc, animated: true)
