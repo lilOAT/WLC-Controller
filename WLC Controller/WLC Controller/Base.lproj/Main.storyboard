@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +24,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oKr-YD-asr">
                                 <rect key="frame" x="40" y="432" width="334" height="230"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="192.168.50.1" borderStyle="roundedRect" placeholder="IP Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a8Z-9e-cDB">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IP Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a8Z-9e-cDB">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Dmy-6o-EMf"/>
@@ -31,7 +32,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin" borderStyle="roundedRect" placeholder="User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6YK-Az-UR6">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6YK-Az-UR6">
                                         <rect key="frame" x="0.0" y="60" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="GEr-9Q-3r9"/>
@@ -39,7 +40,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="raO-hD-Ymn">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="raO-hD-Ymn">
                                         <rect key="frame" x="0.0" y="120" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="vE0-g3-tiW"/>
@@ -104,55 +105,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhD-Dj-sEJ">
-                                <rect key="frame" x="157" y="186" width="104" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="WLAN List">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="didTapButton_wlanList" destination="W4l-k2-DyQ" eventType="touchUpInside" id="f6S-tz-MzS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogJ-lf-BII">
-                                <rect key="frame" x="130" y="489" width="158" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Client List"/>
-                                <connections>
-                                    <action selector="didTapButton_clientList" destination="W4l-k2-DyQ" eventType="touchUpInside" id="6Ic-aH-eZs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1c-Ju-IgA">
-                                <rect key="frame" x="155" y="637" width="109" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Terminal"/>
-                                <connections>
-                                    <action selector="didTapButton_terminal" destination="W4l-k2-DyQ" eventType="touchUpInside" id="vDb-a2-4ta"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFO-zh-OTs">
-                                <rect key="frame" x="148" y="344" width="119" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="AP List"/>
-                                <connections>
-                                    <action selector="didTapButton_apList" destination="W4l-k2-DyQ" eventType="touchUpInside" id="jPb-Jh-KEy"/>
-                                </connections>
-                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dIz-77-lHm">
+                                <rect key="frame" x="-49" y="-1306" width="463" height="3489"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3I0-3F-10f">
+                                <rect key="frame" x="5" y="157.5" width="404" height="424"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhD-Dj-sEJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="fE4-7Q-GQo"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="WLAN List">
+                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTapButton_wlanList" destination="W4l-k2-DyQ" eventType="touchUpInside" id="f6S-tz-MzS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFO-zh-OTs">
+                                        <rect key="frame" x="0.0" y="108" width="404" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="WfM-IM-sar"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="AP List"/>
+                                        <connections>
+                                            <action selector="didTapButton_apList" destination="W4l-k2-DyQ" eventType="touchUpInside" id="jPb-Jh-KEy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogJ-lf-BII">
+                                        <rect key="frame" x="0.0" y="216" width="404" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="qPf-mL-UfI"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Client List"/>
+                                        <connections>
+                                            <action selector="didTapButton_clientList" destination="W4l-k2-DyQ" eventType="touchUpInside" id="6Ic-aH-eZs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1c-Ju-IgA">
+                                        <rect key="frame" x="0.0" y="324" width="404" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="53a-xk-28T"/>
+                                        </constraints>
+                                        <buttonConfiguration key="configuration" style="filled" title="Terminal"/>
+                                        <connections>
+                                            <action selector="didTapButton_terminal" destination="W4l-k2-DyQ" eventType="touchUpInside" id="vDb-a2-4ta"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemFillColor"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JD9-u2-ccE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemFillColor"/>
                         <constraints>
-                            <constraint firstItem="iFO-zh-OTs" firstAttribute="leading" secondItem="JD9-u2-ccE" secondAttribute="leading" constant="148" id="Kkg-g4-RvT"/>
-                            <constraint firstItem="K1c-Ju-IgA" firstAttribute="leading" secondItem="JD9-u2-ccE" secondAttribute="leading" constant="155" id="Y3V-vi-Xn8"/>
-                            <constraint firstItem="GhD-Dj-sEJ" firstAttribute="centerX" secondItem="ogJ-lf-BII" secondAttribute="centerX" id="d5o-kb-kUY"/>
-                            <constraint firstItem="ogJ-lf-BII" firstAttribute="leading" secondItem="JD9-u2-ccE" secondAttribute="leading" constant="130" id="dbe-QS-y5C"/>
-                            <constraint firstItem="GhD-Dj-sEJ" firstAttribute="leading" secondItem="JD9-u2-ccE" secondAttribute="leading" constant="157" id="fpm-RN-CHp"/>
-                            <constraint firstItem="GhD-Dj-sEJ" firstAttribute="top" secondItem="JD9-u2-ccE" secondAttribute="top" constant="94" id="iXn-x8-u9e"/>
-                            <constraint firstItem="JD9-u2-ccE" firstAttribute="bottom" secondItem="K1c-Ju-IgA" secondAttribute="bottom" constant="190" id="mZs-Nm-egS"/>
-                            <constraint firstAttribute="bottom" secondItem="ogJ-lf-BII" secondAttribute="bottom" constant="372" id="sUn-be-WxC"/>
-                            <constraint firstItem="ogJ-lf-BII" firstAttribute="centerX" secondItem="K1c-Ju-IgA" secondAttribute="centerX" id="tnq-xZ-siS"/>
-                            <constraint firstItem="iFO-zh-OTs" firstAttribute="top" secondItem="XP6-r2-m4p" secondAttribute="top" constant="344" id="tqm-zm-3Ez"/>
-                            <constraint firstItem="iFO-zh-OTs" firstAttribute="centerX" secondItem="XP6-r2-m4p" secondAttribute="centerX" id="vHc-d0-nrv"/>
+                            <constraint firstItem="3I0-3F-10f" firstAttribute="centerX" secondItem="XP6-r2-m4p" secondAttribute="centerX" id="JOj-Yj-uYH"/>
+                            <constraint firstItem="3I0-3F-10f" firstAttribute="top" secondItem="JD9-u2-ccE" secondAttribute="top" constant="65.5" id="huH-Um-0Ix"/>
+                            <constraint firstItem="JD9-u2-ccE" firstAttribute="trailing" secondItem="3I0-3F-10f" secondAttribute="trailing" constant="5" id="pv2-Ib-uxH"/>
+                            <constraint firstItem="3I0-3F-10f" firstAttribute="leading" secondItem="JD9-u2-ccE" secondAttribute="leading" constant="5" id="rPu-AJ-gyu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="i5d-lT-AkW"/>
@@ -329,6 +344,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
