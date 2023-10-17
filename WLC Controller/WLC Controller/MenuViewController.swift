@@ -65,7 +65,10 @@ class MenuViewController: UIViewController {
               print("error in parsing client list")
               break
           }
-            Resources.clients.append(CLIENT(ip: ip, mac: mac, interface: interface))
+            if !mac.contains("<incomplete>") {
+                Resources.clients.append(CLIENT(ip: ip, mac: mac, interface: interface))
+            }
+            else {print("Invalid arp entry at ip: " + ip)}
         }
     }
     
