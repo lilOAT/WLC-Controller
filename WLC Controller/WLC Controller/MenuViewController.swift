@@ -44,6 +44,7 @@ class MenuViewController: UIViewController {
     
     //====================================
     //MARK: parseClientList
+    // https://swiftpackageindex.com/pointfreeco/swift-parsing
     func parseClientList() {
         print("clientsString:\n" + Resources.clientsString)
         if(!Resources.clients.isEmpty){

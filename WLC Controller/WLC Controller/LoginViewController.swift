@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // Hide keyboard - https://stackoverflow.com/questions/24126678/close-ios-keyboard-by-touching-anywhere-using-swift
         //Looks for single or multiple taps.
          let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
@@ -43,6 +45,7 @@ class LoginViewController: UIViewController {
     
     //====================================
     // MARK: validateCredentials
+    // https://www.hackingwithswift.com/articles/90/how-to-check-whether-a-value-is-inside-a-range
     func validateCredentials(ip: String, user: String, pass: String) -> Bool {
         var valid = true
         if ip != "" && user != "" && pass != "" {
@@ -83,6 +86,7 @@ class LoginViewController: UIViewController {
     
     //====================================
     //MARK: displayAlert
+    // https://developer.apple.com/documentation/uikit/uialertcontroller
     func displayAlert(title: String, message: String) {
         // Declare alert message
         // https://developer.apple.com/documentation/uikit/uialertcontroller
